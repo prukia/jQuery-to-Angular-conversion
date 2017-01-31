@@ -7,11 +7,53 @@
     <script src="scripts/client.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/styles/style.css">
   </head>
-  <body ng-app="employeeApp">
-    <main class="container" ng-controller="EmployeeController as employeeCtrl">
+  <body ng-app="employerApp">
+    <main class="container" ng-controller="EmployerController as employerCtrl">
     <header>
       <h1>Company X Employee Data</h1>
     </header>
+    <form id='employeeInfo'>
+    <br>
+    <label for="employee">Employee</label>
+  </br>
+    <input type="text" id="employeeFirstName" name="employeeFirstName" placeholder="First Name" ng-model="employerCtrl.employee.fname"/></br>
+    <br>
+    <input type="text" id="employeeLastName" name="employeeLastName" placeholder="Last Name" ng-model="employerCtrl.employee.lname"/></br>
+    <br/>
+    <input type="number" name="employeeIdNumber" placeholder="ID Number" ng-model="employerCtrl.employee.id"/></br>
+    <br>
+    <input type="text" name="employeeJobTitle"placeholder="Job Title" ng-model="employerCtrl.employee.title" /></br>
+    <br>
+    <input type="number" name="employeeAnnualSalary" placeholder="Annual Salary" ng-model="employerCtrl.employee.salary"  /></br>
+    <br><input type="submit" value="Submit" ng-click="employerCtrl.addEmployee()"/></br>
+  </form>
+
+  <div id="employees">
+    <p>Adding employee: {{employerCtrl.employee}}</p>
+  <h3>Employee List:</h3>
+  <!-- to be added via JavaScript -->
+  <table id="employeeData">
+    <thread>
+      <tr>
+        <th>First Name:</th>
+        <th>Last Name:</th>
+        <th>ID:</th>
+        <th>Title:</th>
+        <th>Annual Salary:</th>
+        <th></th>
+      </tr>
+    </thread>
+    <tbody id = "new">
+      <tr ng-repeat="employee in employerCtrl.employees">
+        <td>{{employee.fname}}</td>
+        <td>{{employee.lname}}</td>
+        <td>{{employee.id}}</td>
+        <td>{{employee.title}}</td>
+        <td>{{employee.salary}}</td>
+      </tr>
+
+    </tbody>
+  </table>
 
 
 
