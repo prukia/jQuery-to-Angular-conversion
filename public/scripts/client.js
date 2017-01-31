@@ -24,6 +24,10 @@ app.controller('EmployerController', function (){
     employer.totalMonthlySalary = totalMonthlySalary;
     // toLocaleString("en-US", {style: 'currency', currency: 'USD'});
     //employer.salary = totalMonthlySalary;
+
+    employer.deleteEmployee = function (){
+    
+    }
   };
 
 
